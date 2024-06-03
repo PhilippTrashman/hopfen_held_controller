@@ -9,11 +9,17 @@ class InputHandler {
 
   double? xValue = 0.0;
   double? yValue = 0.0;
-  double? ladderPosition = 0.0;
-  int? waterPumpState = 0;
-  int? indicatorState = 0;
+  double? ladderPosition = 0.5;
   int? lightState = 0;
   int? autopilotState = 0;
+
+  reset() {
+    xValue = 0.0;
+    yValue = 0.0;
+    ladderPosition = 0.5;
+    lightState = 0;
+    autopilotState = 0;
+  }
 
   setJoystickData(double inputXValue, double inputYValue) {
     xValue = inputXValue;
@@ -22,14 +28,6 @@ class InputHandler {
 
   setLadderPosition(double position) {
     ladderPosition = position;
-  }
-
-  setWaterPumpState(int state) {
-    waterPumpState = state;
-  }
-
-  setIndicatorState(int state) {
-    indicatorState = state;
   }
 
   setLightState(int state) {
@@ -44,16 +42,8 @@ class InputHandler {
     return [xValue, yValue];
   }
 
-  int getWaterPumpState() {
-    return waterPumpState!;
-  }
-
   double getLadderPosition() {
     return ladderPosition!;
-  }
-
-  int getIndicatorState() {
-    return indicatorState!;
   }
 
   int getLightState() {

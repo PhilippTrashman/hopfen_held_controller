@@ -195,8 +195,6 @@ class _DemokratenAppState extends State<DemokratenApp> {
             '${inputHandler.getJoystickData()[0]};'
             '${inputHandler.getJoystickData()[1]};'
             '${inputHandler.getLadderPosition()};'
-            '${inputHandler.getWaterPumpState()};'
-            '${inputHandler.getIndicatorState()};'
             '${inputHandler.getLightState()};'
             '${inputHandler.getAutopilotState()}'
             '\n'));
