@@ -1,37 +1,35 @@
 import 'package:flutter/material.dart';
 
 import '../utils/bluetooth.dart';
-import 'customSlider.dart';
-import 'indicators.dart';
+import 'custom_slider.dart';
 
-Expanded spritzerExpanded(double screenHeight) {
+Widget spritzerExpanded(double screenHeight) {
   InputHandler inputHandler = InputHandler();
-  return Expanded(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Expanded(
-          child: Row(
-            children: [
-              const Expanded(child: CustomSlider()),
-              Expanded(
-                child: IconButton(
-                  onPressed: () {
-                    if (inputHandler.waterPumpState == 0) {
-                      inputHandler.setWaterPumpState(1);
-                    } else {
-                      inputHandler.setWaterPumpState(0);
-                    }
-                  },
-                  icon: const Icon(Icons.sports_bar_rounded),
-                  iconSize: screenHeight * 0.15,
-                ),
-              )
-            ],
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Spacer(),
+      const Expanded(flex: 2, child: CustomSlider()),
+      Expanded(
+        child: AspectRatio(
+          aspectRatio: 1,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.5),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.local_fire_department,
+                color: Color.fromARGB(255, 51, 107, 56),
+              ),
+              iconSize: screenHeight * 0.1,
+            ),
           ),
         ),
-        indicatorExpanded(screenHeight),
-      ],
-    ),
+      ),
+      Spacer(),
+    ],
   );
 }
